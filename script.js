@@ -32,11 +32,10 @@ function ensurePositiveIntegerInput(userInput){
   while (isNaN(Number(finalInput))
           || finalInput.toString().includes(".")
           || finalInput.toString().includes("-")
-          || Number(finalInput) === 0       // Want to make sure we are given a positive integer less than 20
-          || Number(finalInput) > 20){     // and want to ensure the user can get out by pressing cancel
-                                            // 20 was chosen as it seemed to be a pattern of somewhat reasonable
-                                            // length
-      finalInput = prompt("Oops! Please make sure to input a positive integer less than 20.");
+          || Number(finalInput) === 0       // Want to make sure we are given a positive integer less than 85
+          || Number(finalInput) > 85){      // and want to ensure the user can get out by pressing cancel.
+                                            // 85 was chosen as it is one more than the world record for simon says
+      finalInput = prompt("Oops! Please make sure to input a positive integer less than 85.");
       if (finalInput === null){
         stopGame();
         return
@@ -53,14 +52,14 @@ function startGame(){
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
-  let patternLength = prompt("Choose the length of the pattern.\nThe pattern can be 1 to 20 buttons long.");
+  let patternLength = prompt("Choose the length of the pattern.\nThe pattern can be 1 to 85 buttons long.");
   patternLength = ensurePositiveIntegerInput(patternLength);
   if (patternLength !== undefined){
     generateNewPattern(patternLength);
-    livesLeft = prompt("Choose how many lives you start with.You can have 1 to 20 lives.");
+    livesLeft = prompt("Choose how many lives you start with.\nYou can have 1 to 85 lives.");
     livesLeft = ensurePositiveIntegerInput(livesLeft);
     if (livesLeft !== undefined){
-      document.getElementById("lifeCounter").innerHTML = "lives left: " + livesLeft;
+      document.getElementById("lifeCounter").innerHTML = "Lives Left: " + livesLeft;
       document.getElementById("lifeCounter").classList.remove("hidden");
       playClueSequence(); // Plays the initial clue
   }
