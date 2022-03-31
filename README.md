@@ -35,10 +35,12 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Added a box to show the user how many lives they have left
-- [x] Asked the user how long they want the pattern to be, with a restriction of up to 20 buttons long. If invalid
+- [x] Asked the user how long they want the pattern to be, with a restriction of up to 85 buttons long. If invalid
   input was given, would continue to ask until valid input was given, unless the cancel button was pressed
-- [x] Asked the user how many lives they want to start with, with a restriction of up to 20 lives. If invalid input
-  was given, would continue to ask until valid input was given, unless the cancel button was pressed
+- [x] Asked the user how many lives they want to start with, with a restriction of up to 85 lives. If invalid input
+  was given, would continue to ask until valid input was given, unless the cancel button was pressed (85 buttons
+  and lives were chosen as the cap since 84 is the world record for Simon Says, a
+  memory game identical to this)
 - [x] Shows the user the longest pattern they've gone up to so far
 - [x] Made a slight modification to the title depending on if the user just opened
   up the site, are in the middle of a game, or have just finished a game
